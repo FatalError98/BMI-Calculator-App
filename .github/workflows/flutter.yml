@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Dart/Flutter Package Analyzer
-        uses: axel-op/dart-package-analyzer@v3
+      - name: Flutter Package Updater
+        uses: tianhaoz95/update-flutter-packages@v0.0.5
+
 
