@@ -16,10 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.3.7'
-          channel: 'stable'
-      - run: flutter --version     
-      - name: Flutter Pubspec Updater
-        uses: kuanyi-ng/update-flutter-packages@v0.1.2
+      - name: Dart/Flutter Package Analyzer
+        uses: axel-op/dart-package-analyzer@v3
+
