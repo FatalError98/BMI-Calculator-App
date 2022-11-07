@@ -21,3 +21,4 @@ jobs:
           channel: 'stable'
       - run: flutter upgrade
       - run: flutter pub upgrade --major-versions
+      - run: flutter pub outdated
