@@ -22,3 +22,8 @@ jobs:
       - run: flutter upgrade
       - run: flutter pub upgrade --major-versions
       - run: flutter pub outdated
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated Change
+          branch: Package-Update
+          create_branch: true
