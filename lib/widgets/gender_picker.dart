@@ -1,11 +1,12 @@
-import 'package:bmi_calculator/constant/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../constant/colors.dart';
 
 class GenderPick extends StatelessWidget {
   final String emoji;
   final String title;
   final bool isSelected;
-  GenderPick({
+  const GenderPick({
     required this.emoji,
     required this.title,
     required this.isSelected,

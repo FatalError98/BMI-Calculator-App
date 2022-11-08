@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:provider/provider.dart';
 
-import '../models/bmi.dart';
+import '../providers/bmi_provider.dart';
 import './card_title.dart';
 import '../constant/colors.dart';
 
@@ -11,7 +11,7 @@ class HeightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var bmi = Provider.of<Bmi>(context, listen: false);
+    var bmi = Provider.of<BmiProvider>(context);
     return CardTitle(
       height: 300,
       width: 150,

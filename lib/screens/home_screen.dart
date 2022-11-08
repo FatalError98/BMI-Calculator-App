@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/bmi.dart';
+import '../providers/bmi_provider.dart';
 import './result_screen.dart';
 import '../constant/colors.dart';
 import '../widgets/input_view.dart';
@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bmi = Provider.of<Bmi>(context);
+    final bmi = Provider.of<BmiProvider>(context);
 
     return Scaffold(
       backgroundColor: scaffoldBackgroundColor,
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            InputView(),
+            const InputView(),
             InkWell(
               onTap: () => Navigator.of(context)
                   .pushNamed(ResultScreen.routeName, arguments: [

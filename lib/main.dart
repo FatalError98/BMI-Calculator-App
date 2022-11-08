@@ -1,7 +1,7 @@
-import 'package:bmi_calculator/models/bmi.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import './providers/bmi_provider.dart';
 import './screens/result_screen.dart';
 import './screens/home_screen.dart';
 import './screens/profile_screen.dart';
@@ -9,12 +9,7 @@ import './screens/settings_screen.dart';
 import './constant/colors.dart';
 
 void main() {
-  // SystemChrome.setPreferredOrientations(
-  //   [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
-  // ).then(
-  //   (_) =>
   runApp(BmiCalculator());
-  // );
 }
 
 class BmiCalculator extends StatelessWidget {
@@ -25,7 +20,7 @@ class BmiCalculator extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => Bmi(),
+          create: (context) => BmiProvider(),
         ),
       ],
       child: MaterialApp(
