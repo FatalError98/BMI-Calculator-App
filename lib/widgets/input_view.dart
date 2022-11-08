@@ -6,8 +6,6 @@ import './height_card.dart';
 import './weight_card.dart';
 
 class InputView extends StatelessWidget {
-  const InputView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 
 import './card_title.dart';
 import './gender_picker.dart';
-import '../models/gender.dart';
+
+enum Gender {
+  male,
+  female,
+}
 
 class GenderCard extends StatefulWidget {
   const GenderCard({super.key});

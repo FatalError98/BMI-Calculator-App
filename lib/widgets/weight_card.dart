@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:provider/provider.dart';
 
+import '../models/bmi.dart';
 import './card_title.dart';
 import '../constant/colors.dart';
 
-class WeightCard extends StatefulWidget {
-  const WeightCard({
-    Key? key,
-  }) : super(key: key);
+class WeightCard extends StatelessWidget {
+  const WeightCard({super.key});
 
-  @override
-  State<WeightCard> createState() => _WeightCardState();
-}
-
-double currentWeight = 10;
-
-class _WeightCardState extends State<WeightCard> {
   @override
   Widget build(BuildContext context) {
+    final bmi = Provider.of<Bmi>(context, listen: false);
     return CardTitle(
       height: 150,
       width: 300,
@@ -25,7 +19,7 @@ class _WeightCardState extends State<WeightCard> {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
+            margin: const EdgeInsets.symmetric(vertical: 10),
             width: 150,
             decoration: BoxDecoration(
                 border: Border.all(
@@ -47,18 +41,11 @@ class _WeightCardState extends State<WeightCard> {
                     ),
                   ),
                   child: InkWell(
-                    child: const Icon(
-                      Icons.remove,
-                      size: 20,
-                    ),
-                    onTap: () => setState(
-                      () {
-                        if (currentWeight > 10) {
-                          currentWeight -= 0.1;
-                        }
-                      },
-                    ),
-                  ),
+                      child: const Icon(
+                        Icons.remove,
+                        size: 20,
+                      ),
+                      onTap: () => bmi.decWeight()),
                 ),
                 Container(
                   color: Colors.white,
@@ -66,7 +53,7 @@ class _WeightCardState extends State<WeightCard> {
                     width: 60,
                     child: Text(
                       textAlign: TextAlign.center,
-                      currentWeight.toStringAsFixed(1),
+                      bmi.weight.toStringAsFixed(1),
                       style: const TextStyle(
                         color: primaryColor,
                         fontSize: 20,
@@ -75,7 +62,7 @@ class _WeightCardState extends State<WeightCard> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 5),
+                  padding: const EdgeInsets.only(left: 5),
                   decoration: BoxDecoration(
                     border: Border(
                       left: BorderSide(
@@ -89,34 +76,23 @@ class _WeightCardState extends State<WeightCard> {
                       Icons.add,
                       size: 20,
                     ),
-                    onTap: () => setState(
-                      () {
-                        if (currentWeight < 150) {
-                          currentWeight += 0.1;
-                        }
-                      },
-                    ),
+                    onTap: () => bmi.incWeight(),
                   ),
                 ),
               ],
             ),
           ),
           SfSlider(
-            showDividers: true,
-            stepSize: 0.1,
-            showTicks: true,
-            minorTicksPerInterval: 1,
-            min: 10.0,
-            max: 150.0,
-            interval: 20,
-            showLabels: true,
-            value: currentWeight,
-            onChanged: (newValue) {
-              setState(() {
-                currentWeight = newValue;
-              });
-            },
-          ),
+              showDividers: true,
+              stepSize: 0.1,
+              showTicks: true,
+              minorTicksPerInterval: 1,
+              min: 10.0,
+              max: 150.0,
+              interval: 20,
+              showLabels: true,
+              value: bmi.weight,
+              onChanged: (newValue) => bmi.weightSlider(newValue)),
         ],
       ),
     );

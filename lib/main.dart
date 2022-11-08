@@ -1,6 +1,8 @@
+import 'package:bmi_calculator/models/bmi.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
+import './screens/result_screen.dart';
 import './screens/home_screen.dart';
 import './screens/profile_screen.dart';
 import './screens/settings_screen.dart';
@@ -20,23 +22,31 @@ class BmiCalculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.light,
-          seedColor: primaryColor,
-          primary: primaryColor,
-          secondary: secondaryColor,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Bmi(),
         ),
-        fontFamily: 'SF Pro Display',
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            brightness: Brightness.light,
+            seedColor: primaryColor,
+            primary: primaryColor,
+            secondary: secondaryColor,
+          ),
+          fontFamily: 'SF Pro Display',
+        ),
+        initialRoute: HomeScreen.routeName,
+        routes: {
+          HomeScreen.routeName: (context) => HomeScreen(),
+          ProfileScreen.routeName: (context) => ProfileScreen(),
+          SettingsScreen.routeName: (context) => SettingsScreen(),
+          ResultScreen.routeName: (context) => ResultScreen(),
+        },
       ),
-      initialRoute: HomeScreen.routeName,
-      routes: {
-        HomeScreen.routeName: (context) => HomeScreen(),
-        ProfileScreen.routeName: (context) => ProfileScreen(),
-        SettingsScreen.routeName: (context) => SettingsScreen(),
-      },
     );
   }
 }
