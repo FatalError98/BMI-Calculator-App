@@ -35,10 +35,10 @@ class _GenderCardState extends State<GenderCard> {
   Widget build(BuildContext context) {
     return CardTitle(
       height: 150,
-      width: 150,
+      width: 154,
       title: 'Gender',
       child: Container(
-        margin: EdgeInsets.only(top: 15),
+        margin: const EdgeInsets.only(top: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

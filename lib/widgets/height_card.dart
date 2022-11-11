@@ -14,7 +14,7 @@ class HeightCard extends StatelessWidget {
     var bmi = Provider.of<BmiProvider>(context);
     return CardTitle(
       height: 300,
-      width: 150,
+      width: 154,
       title: 'Height',
       child: Expanded(
         child: Column(

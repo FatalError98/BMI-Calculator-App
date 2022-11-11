@@ -14,7 +14,7 @@ class WeightCard extends StatelessWidget {
     final bmi = Provider.of<BmiProvider>(context);
     return CardTitle(
       height: 150,
-      width: 300,
+      width: double.infinity,
       title: 'Weight',
       child: Column(
         children: [

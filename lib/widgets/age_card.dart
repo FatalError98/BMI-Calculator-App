@@ -20,7 +20,7 @@ class _AgeCardState extends State<AgeCard> {
   Widget build(BuildContext context) {
     return CardTitle(
       height: 150,
-      width: 150,
+      width: 154,
       title: 'Age',
       child: Container(
         margin: const EdgeInsets.only(top: 10),

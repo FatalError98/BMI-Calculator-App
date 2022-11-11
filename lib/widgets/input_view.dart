@@ -13,7 +13,7 @@ class InputView extends StatelessWidget {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: const [
