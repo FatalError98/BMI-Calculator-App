@@ -15,10 +15,7 @@ class ResultScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
-        children: [
-          Text('${height}'),
-          Text('${weight}'),
-        ],
+        children: [],
       ),
     );
   }

@@ -28,11 +28,8 @@ class HomeScreen extends StatelessWidget {
           children: [
             const InputView(),
             InkWell(
-              onTap: () => Navigator.of(context)
-                  .pushNamed(ResultScreen.routeName, arguments: [
-                bmi.height,
-                bmi.weight,
-              ]),
+              onTap: () =>
+                  Navigator.of(context).pushNamed(ResultScreen.routeName),
               child: Container(
                 width: 200,
                 height: 50,
