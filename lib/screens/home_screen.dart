@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bmi = Provider.of<BmiProvider>(context);
-
     return Scaffold(
       backgroundColor: scaffoldBackgroundColor,
       drawer: const Drawer(),
@@ -24,15 +23,18 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const InputView(),
+            const SizedBox(
+              height: 24.0,
+            ),
             InkWell(
-              onTap: () =>
-                  Navigator.of(context).pushNamed(ResultScreen.routeName),
+              onTap: () {
+                bmi.calculateBmiKgM();
+                Navigator.of(context).pushNamed(ResultScreen.routeName);
+              },
               child: Container(
-                width: 200,
-                height: 50,
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.circular(6),
@@ -43,6 +45,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
