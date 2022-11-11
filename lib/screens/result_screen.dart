@@ -1,6 +1,8 @@
-import 'package:bmi_calculator/models/bmi.dart';
-import 'package:bmi_calculator/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/bmi_provider.dart';
+import '../constant/colors.dart';
 
 class ResultScreen extends StatelessWidget {
   static const routeName = '/resultScreen';
@@ -8,14 +10,102 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as List<double>;
-    final double height = args[0];
-    final double weight = args[1];
+    final bmi = Provider.of<BmiProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [],
+      appBar: AppBar(
+        title: const Text('BMI Result'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 24.0,
+            ),
+            Card(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 24),
+                child: Column(
+                  children: [
+                    Text(
+                      'Your BMI is',
+                      style: TextStyle(
+                          fontSize: 32,
+                          color: Colors.black.withOpacity(0.7),
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(
+                      height: 8.0,
+                    ),
+                    Text(
+                      bmi.bmi.toStringAsFixed(1),
+                      style: TextStyle(
+                          fontSize: 56,
+                          color: Colors.black.withOpacity(0.7),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const Text(
+                      'kg/m2',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 32.0,
+                    ),
+                    Text(
+                      bmi.icon,
+                      style: const TextStyle(
+                        color: primaryColor,
+                        fontSize: 48,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16.0,
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          const TextSpan(
+                              text: 'Your Weight is: ',
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 14)),
+                          TextSpan(
+                              text: bmi.category,
+                              style: const TextStyle(
+                                  color: secondaryColor,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 50.0,
+            ),
+            const Text(
+              'Healthy BMI range: 18.5 kg/m2 - 25 kg/m2',
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Text(
+              'Healthy weight for the height: ${bmi.healthyWeightMin.toStringAsFixed(1)} Kg - ${bmi.healthyWeightMax.toStringAsFixed(1)} Kg',
+              style: const TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
