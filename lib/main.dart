@@ -4,12 +4,12 @@ import 'package:provider/provider.dart';
 import './providers/bmi_provider.dart';
 import './screens/result_screen.dart';
 import './screens/home_screen.dart';
-import './screens/profile_screen.dart';
-import './screens/settings_screen.dart';
 import './constant/colors.dart';
 
 void main() {
-  runApp(BmiCalculator());
+  runApp(
+    const BmiCalculator(),
+  );
 }
 
 class BmiCalculator extends StatelessWidget {
@@ -36,10 +36,8 @@ class BmiCalculator extends StatelessWidget {
         ),
         initialRoute: HomeScreen.routeName,
         routes: {
-          HomeScreen.routeName: (context) => HomeScreen(),
-          ProfileScreen.routeName: (context) => ProfileScreen(),
-          SettingsScreen.routeName: (context) => SettingsScreen(),
-          ResultScreen.routeName: (context) => ResultScreen(),
+          HomeScreen.routeName: (context) => const HomeScreen(),
+          ResultScreen.routeName: (context) => const ResultScreen(),
         },
       ),
     );
