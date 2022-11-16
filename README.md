@@ -80,5 +80,5 @@ Distributed under the MIT License. See [LICENSE](https://github.com/FatalError98
 [stars-url]: https://github.com/FatalError98/BMI-Calculator-App/stargazers
 
 <!-- forks Shield and Url -->
-[forks-shield]: https://img.shields.io/github/forks/FatalError98/BMI-CalculatorBMI-Calculator-App?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/FatalError98/BMI-Calculator-App?style=flat-square
 [forks-url]: https://github.com/Fenil-Nividata/FlutterBMI/network/members
