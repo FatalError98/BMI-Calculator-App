@@ -13,7 +13,6 @@
 ## Table of Contents
   - [About The Project](#about-the-project)
   - [Request Features](#request-features)
-  - [Contributing](#contributing)
   - [License](#license)
 
 <!-- ABOUT THE PROJECT -->
