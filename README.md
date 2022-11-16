@@ -63,23 +63,23 @@ Distributed under the MIT License. See [LICENSE](https://github.com/FatalError98
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- Contributors Shield and Url -->
-[contributors-shield]: https://img.shields.io/github/contributors/FatalError98/BMI-Calculator-App?color=gree&style=plastic
+[contributors-shield]: https://img.shields.io/github/contributors/FatalError98/BMI-Calculator-App?color=green&style=flat-square
 [contributors-url]: https://github.com/FatalError98/BMI-Calculator-App/graphs/contributors
 
 <!-- license Shield and Url -->
-[license-shield]: https://img.shields.io/github/license/FatalError98/BMI-Calculator-App?style=plastic
+[license-shield]: https://img.shields.io/github/license/FatalError98/BMI-Calculator-App?style=flat-square
 [license-url]: https://github.com/FatalError98/BMI-Calculator-App/blob/main/LICENSE.md
 
 <!-- issues Shield and Url -->
 [issues-url]:https://github.com/FatalError98/BMI-Calculator-App/issues
-[issues-shield]: https://img.shields.io/github/issues/FatalError98/BMI-Calculator-App?color=yellow&style=plastic
+[issues-shield]: https://img.shields.io/github/issues/FatalError98/BMI-Calculator-App?color=yellow&style=flat-square
 
 <!-- stars Shield and Url -->
-[stars-shield]: https://img.shields.io/github/stars/FatalError98?style=plastic
+[stars-shield]: https://img.shields.io/github/stars/FatalError98?style=flat-square
 [stars-url]: https://github.com/FatalError98/BMI-Calculator-App/stargazers
 
 <!-- forks Shield and Url -->
-[forks-shield]: https://img.shields.io/github/forks/FatalError98/BMI-Calculator-App?style=plastic
+[forks-shield]: https://img.shields.io/github/forks/FatalError98/BMI-Calculator-App?style=flat-square
 [forks-url]: https://github.com/Fenil-Nividata/FlutterBMI/network/members
 
 <!-- Build Shield and URl -->
