@@ -83,5 +83,5 @@ Distributed under the MIT License. See [LICENSE](https://github.com/FatalError98
 [forks-url]: https://github.com/Fenil-Nividata/FlutterBMI/network/members
 
 <!-- Build Shield and URl -->
-[build-shield]: https://img.shields.io/github.com/FatalError98/BMI-Calculator-App/actions/workflows/flutter.yml?color=green&style=flat-square
+[build-shield]: https://github.com/FatalError98/BMI-Calculator-App/actions/workflows/flutter.yml/badge.svg
 [build-url]: https://github.com/FatalError98/BMI-Calculator-App/actions/workflows/flutter.yml
