@@ -16,7 +16,7 @@ class GenderCard extends StatefulWidget {
 }
 
 class _GenderCardState extends State<GenderCard> {
-  bool _isMale = false;
+  bool _isMale = true;
   bool _isFemale = false;
 
   void selectGender(var gender) {
@@ -34,11 +34,11 @@ class _GenderCardState extends State<GenderCard> {
   @override
   Widget build(BuildContext context) {
     return CardTitle(
-      height: 150,
+      height: 177.5,
       width: 154,
       title: 'Gender',
       child: Container(
-        margin: const EdgeInsets.only(top: 15),
+        margin: const EdgeInsets.only(top: 30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

@@ -19,11 +19,11 @@ class _AgeCardState extends State<AgeCard> {
   @override
   Widget build(BuildContext context) {
     return CardTitle(
-      height: 150,
+      height: 177.5,
       width: 154,
       title: 'Age',
       child: Container(
-        margin: const EdgeInsets.only(top: 10),
+        margin: const EdgeInsets.only(top: 20),
         child: Column(
           children: [
             NumberPicker(
@@ -40,7 +40,7 @@ class _AgeCardState extends State<AgeCard> {
               }),
             ),
             const SizedBox(
-              height: 8,
+              height: 16,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

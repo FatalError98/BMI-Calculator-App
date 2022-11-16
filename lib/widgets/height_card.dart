@@ -13,7 +13,7 @@ class HeightCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var bmi = Provider.of<BmiProvider>(context);
     return CardTitle(
-      height: 300,
+      height: 355,
       width: 154,
       title: 'Height',
       child: Expanded(
@@ -24,7 +24,7 @@ class HeightCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  height: 250,
+                  height: 300,
                   child: SfSlider.vertical(
                     showDividers: true,
                     stepSize: 0.1,
