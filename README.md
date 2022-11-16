@@ -72,7 +72,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/FatalError98
 
 <!-- issues Shield and Url -->
 [issues-url]:https://github.com/FatalError98/BMI-Calculator-App/issues
-[issues-shield]: https://img.shields.io/github/issues/FatalError98/BMI-Calculator-App?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/FatalError98/BMI-Calculator-App?color=blue&style=flat-square
 
 <!-- stars Shield and Url -->
 [stars-shield]: https://img.shields.io/github/stars/FatalError98?style=flat-square
