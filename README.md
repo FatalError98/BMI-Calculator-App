@@ -6,7 +6,7 @@
  *** https://shields.io/ 
  -->
  
-[![contributors][contributors-shield]][contributors-url] [![Stargazers][stars-shield]][stars-url] [![Forks][forks-shield]][forks-url] [![Issues][issues-shield]][issues-url] [![MIT License][license-shield]][license-url]
+[![contributors][contributors-shield]][contributors-url] [![Stargazers][stars-shield]][stars-url] [![Forks][forks-shield]][forks-url] [![Issues][issues-shield]][issues-url] [![MIT License][license-shield]][license-url][![Flutter][build-shield]][build-url]
 
 
 <!-- TABLE OF CONTENTS -->
@@ -81,3 +81,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/FatalError98
 <!-- forks Shield and Url -->
 [forks-shield]: https://img.shields.io/github/forks/FatalError98/BMI-Calculator-App?style=flat-square
 [forks-url]: https://github.com/Fenil-Nividata/FlutterBMI/network/members
+
+<!-- Build Shield and URl -->
+[build-shield]: https://github.com/FatalError98/BMI-Calculator-App/actions/workflows/flutter.yml/badge.svg
+[build-url]: https://github.com/FatalError98/BMI-Calculator-App/actions/workflows/flutter.yml
