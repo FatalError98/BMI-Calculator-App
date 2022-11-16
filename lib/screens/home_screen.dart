@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../functions/screen_size.dart';
-import '../providers/bmi_provider.dart';
-
 import '../constant/colors.dart';
 import '../widgets/input_view.dart';
 
@@ -21,8 +18,10 @@ class HomeScreen extends StatelessWidget {
           title: const Text('BMI Calculator'),
         ),
         body: Padding(
-          padding: EdgeInsets.all(screenAwareSize(8.0, context)),
-          child: const InputView(),
+          padding: EdgeInsets.all(
+            screenWidth(2, context),
+          ),
+          child: InputView(),
         ),
       ),
     );

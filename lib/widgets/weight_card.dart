@@ -14,15 +14,14 @@ class WeightCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final bmi = Provider.of<BmiProvider>(context);
     return CardTitle(
-      height: screenAwareSize(150, context),
-      width: screenAwareSize(314, context),
+      height: screenHeight(23.5, context),
+      width: screenWidth(96, context),
       title: 'Weight',
       child: Column(
         children: [
           Container(
-            margin:
-                EdgeInsets.symmetric(vertical: screenAwareSize(10.0, context)),
-            width: screenAwareSize(150.0, context),
+            margin: EdgeInsets.symmetric(vertical: 10),
+            width: 150,
             decoration: BoxDecoration(
                 border: Border.all(
                   width: 1,
@@ -33,7 +32,7 @@ class WeightCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  padding: EdgeInsets.only(right: screenAwareSize(5, context)),
+                  padding: EdgeInsets.only(right: 5),
                   decoration: BoxDecoration(
                     border: Border(
                       right: BorderSide(
@@ -45,26 +44,26 @@ class WeightCard extends StatelessWidget {
                   child: InkWell(
                       child: Icon(
                         Icons.remove,
-                        size: screenAwareSize(20, context),
+                        size: 20,
                       ),
                       onTap: () => bmi.decWeight()),
                 ),
                 Container(
                   color: Colors.white,
                   child: SizedBox(
-                    width: screenAwareSize(60.0, context),
+                    width: 60,
                     child: Text(
                       textAlign: TextAlign.center,
                       bmi.weight.toStringAsFixed(1),
                       style: TextStyle(
                         color: primaryColor,
-                        fontSize: screenAwareSize(20.0, context),
+                        fontSize: 20,
                       ),
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: screenAwareSize(5.0, context)),
+                  padding: EdgeInsets.only(left: 5),
                   decoration: BoxDecoration(
                     border: Border(
                       left: BorderSide(
@@ -76,7 +75,7 @@ class WeightCard extends StatelessWidget {
                   child: InkWell(
                     child: Icon(
                       Icons.add,
-                      size: screenAwareSize(20, context),
+                      size: 20,
                     ),
                     onTap: () => bmi.incWeight(),
                   ),

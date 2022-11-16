@@ -20,17 +20,20 @@ class _AgeCardState extends State<AgeCard> {
   @override
   Widget build(BuildContext context) {
     return CardTitle(
-      height: screenAwareSize(155, context),
-      width: screenAwareSize(155, context),
+      height: screenHeight(23.5, context),
+      width: screenWidth(47, context),
       title: 'Age',
       child: Column(
         children: [
+          SizedBox(
+            height: screenHeight(1.5, context),
+          ),
           NumberPicker(
-            selectedTextStyle: TextStyle(
-                color: primaryColor, fontSize: screenAwareSize(24.0, context)),
+            selectedTextStyle:
+                const TextStyle(color: primaryColor, fontSize: 24),
             axis: Axis.horizontal,
             itemCount: 3,
-            itemWidth: screenAwareSize(40.0, context),
+            itemWidth: screenWidth(9, context),
             minValue: 1,
             maxValue: 130,
             value: age,
@@ -39,25 +42,25 @@ class _AgeCardState extends State<AgeCard> {
             }),
           ),
           SizedBox(
-            height: screenAwareSize(8.0, context),
+            height: screenHeight(1, context),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                width: screenAwareSize(35, context),
-                height: screenAwareSize(35, context),
+                width: screenWidth(9, context),
+                height: screenWidth(9, context),
                 decoration: const BoxDecoration(
                   color: primaryColor,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                   splashColor: primaryColor.withOpacity(0.5),
-                  splashRadius: 20,
-                  icon: Icon(
+                  splashRadius: screenWidth(5, context),
+                  icon: const Icon(
                     Icons.remove,
                     color: Colors.white,
-                    size: screenAwareSize(16.0, context),
+                    size: 16,
                   ),
                   onPressed: () => setState(() {
                     if (age > 1) {
@@ -67,19 +70,19 @@ class _AgeCardState extends State<AgeCard> {
                 ),
               ),
               Container(
-                width: screenAwareSize(35, context),
-                height: screenAwareSize(35, context),
+                width: screenWidth(9, context),
+                height: screenWidth(9, context),
                 decoration: const BoxDecoration(
                   color: primaryColor,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                   splashColor: primaryColor.withOpacity(0.5),
-                  splashRadius: 20,
-                  icon: Icon(
+                  splashRadius: screenWidth(5, context),
+                  icon: const Icon(
                     Icons.add,
                     color: Colors.white,
-                    size: screenAwareSize(16.0, context),
+                    size: 16.0,
                   ),
                   onPressed: () => setState(() {
                     if (age < 130) {

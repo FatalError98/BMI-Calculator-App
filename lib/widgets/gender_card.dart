@@ -35,11 +35,11 @@ class _GenderCardState extends State<GenderCard> {
   @override
   Widget build(BuildContext context) {
     return CardTitle(
-      height: screenAwareSize(155, context),
-      width: screenAwareSize(155, context),
+      height: screenHeight(23.5, context),
+      width: screenWidth(47, context),
       title: 'Gender',
       child: Container(
-        margin: EdgeInsets.only(top: screenAwareSize(15.0, context)),
+        margin: EdgeInsets.only(top: screenWidth(2, context)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

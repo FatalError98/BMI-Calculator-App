@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../functions/screen_size.dart';
 import '../providers/bmi_provider.dart';
 import '../constant/colors.dart';
 
@@ -25,8 +26,9 @@ class ResultScreen extends StatelessWidget {
             ),
             Card(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 80, vertical: 24),
+                padding: EdgeInsets.symmetric(
+                    horizontal: screenWidth(24, context),
+                    vertical: screenWidth(8, context)),
                 child: Column(
                   children: [
                     Text(

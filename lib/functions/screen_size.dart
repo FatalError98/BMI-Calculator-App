@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-const double baseHeight = 650.0;
-double screenAwareSize(double size, BuildContext context) {
-  return size * MediaQuery.of(context).size.longestSide / baseHeight;
+double screenHeight(double size, BuildContext context) {
+  return MediaQuery.of(context).size.height * (size / 100);
+}
+
+double screenWidth(double size, BuildContext context) {
+  return MediaQuery.of(context).size.width * (size / 100);
 }

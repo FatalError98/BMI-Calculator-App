@@ -20,7 +20,7 @@ class GenderPick extends StatelessWidget {
       children: [
         GestureDetector(
           child: Container(
-            padding: EdgeInsets.all(screenAwareSize(8.0, context)),
+            padding: EdgeInsets.all(screenWidth(2, context)),
             decoration: BoxDecoration(
               color: isSelected
                   ? primaryColor.withOpacity(0.5)
@@ -39,12 +39,12 @@ class GenderPick extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: screenAwareSize(10.0, context),
+          height: screenWidth(2, context),
         ),
         Text(
           title,
           style: TextStyle(
-              fontSize: screenAwareSize(16.0, context),
+              fontSize: 16.0,
               color: isSelected ? primaryColor : Colors.grey[800],
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal),
         )

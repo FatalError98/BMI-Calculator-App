@@ -14,8 +14,8 @@ class HeightCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var bmi = Provider.of<BmiProvider>(context);
     return CardTitle(
-      height: screenAwareSize(310, context),
-      width: screenAwareSize(155, context),
+      height: screenHeight(47.5, context),
+      width: screenWidth(47, context),
       title: 'Height',
       child: Column(
         children: [
@@ -23,7 +23,7 @@ class HeightCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               SizedBox(
-                height: screenAwareSize(230, context),
+                height: screenHeight(35, context),
                 child: SfSlider.vertical(
                   showDividers: true,
                   stepSize: 0.1,
@@ -42,23 +42,23 @@ class HeightCard extends StatelessWidget {
             ],
           ),
           Container(
-            height: screenAwareSize(25.0, context),
-            width: screenAwareSize(150, context),
+            height: screenHeight(3.5, context),
+            width: screenWidth(40, context),
             decoration: BoxDecoration(
               border: Border.all(
                 width: 1,
                 color: primaryColor.withOpacity(0.5),
               ),
               borderRadius: BorderRadius.circular(
-                screenAwareSize(6.0, context),
+                6.0,
               ),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  padding: EdgeInsets.only(
-                    right: screenAwareSize(5.0, context),
+                  padding: const EdgeInsets.only(
+                    right: 5.0,
                   ),
                   decoration: BoxDecoration(
                     border: Border(
@@ -69,25 +69,26 @@ class HeightCard extends StatelessWidget {
                     ),
                   ),
                   child: InkWell(
-                      child: Icon(
-                        Icons.remove,
-                        size: screenAwareSize(20.0, context),
-                      ),
-                      onTap: () => bmi.decHeight()),
+                    child: const Icon(
+                      Icons.remove,
+                      size: 20.0,
+                    ),
+                    onTap: () => bmi.decHeight(),
+                  ),
                 ),
                 Container(
                   color: Colors.white,
                   child: Text(
                     textAlign: TextAlign.center,
                     bmi.height.toStringAsFixed(1),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: primaryColor,
-                      fontSize: screenAwareSize(20.0, context),
+                      fontSize: 20.0,
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: screenAwareSize(5.0, context)),
+                  padding: const EdgeInsets.only(left: 5.0),
                   decoration: BoxDecoration(
                     border: Border(
                       left: BorderSide(
@@ -97,9 +98,9 @@ class HeightCard extends StatelessWidget {
                     ),
                   ),
                   child: InkWell(
-                      child: Icon(
+                      child: const Icon(
                         Icons.add,
-                        size: screenAwareSize(20.0, context),
+                        size: 20.0,
                       ),
                       onTap: () => bmi.incHeight()),
                 ),

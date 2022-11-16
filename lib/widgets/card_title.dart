@@ -18,22 +18,22 @@ class CardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: screenAwareSize(height, context),
-      width: screenAwareSize(width, context),
+      height: height,
+      width: width,
       child: Card(
         child: Padding(
-          padding: EdgeInsets.all(screenAwareSize(8.0, context)),
+          padding: EdgeInsets.all(screenWidth(2, context)),
           child: Column(
             children: [
               Text(
                 title,
-                style: TextStyle(
-                    color: const Color.fromARGB(160, 0, 0, 0),
-                    fontSize: screenAwareSize(16.0, context),
+                style: const TextStyle(
+                    color: Color.fromARGB(160, 0, 0, 0),
+                    fontSize: 16.0,
                     fontWeight: FontWeight.w500),
               ),
               const Divider(
-                thickness: 0.5,
+                thickness: 0.7,
               ),
               child,
             ],

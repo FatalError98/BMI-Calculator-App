@@ -17,26 +17,30 @@ class InputView extends StatelessWidget {
   Widget build(BuildContext context) {
     final bmi = Provider.of<BmiProvider>(context);
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
-              children: const [
+              children: [
                 GenderCard(),
+                SizedBox(
+                  height: screenWidth(1, context),
+                ),
                 AgeCard(),
               ],
+            ),
+            SizedBox(
+              width: screenWidth(1, context),
             ),
             const HeightCard(),
           ],
         ),
         SizedBox(
-          height: screenAwareSize(2, context),
+          height: screenWidth(2, context),
         ),
         const WeightCard(),
-        SizedBox(
-          height: screenAwareSize(4, context),
+        const SizedBox(
+          height: 16,
         ),
         InkWell(
           onTap: () {
@@ -44,8 +48,8 @@ class InputView extends StatelessWidget {
             Navigator.of(context).pushNamed(ResultScreen.routeName);
           },
           child: Container(
-            width: screenAwareSize(320, context),
-            padding: const EdgeInsets.symmetric(vertical: 10),
+            width: screenWidth(95, context),
+            padding: EdgeInsets.symmetric(vertical: screenWidth(2.5, context)),
             decoration: BoxDecoration(
               color: primaryColor,
               borderRadius: BorderRadius.circular(6),
@@ -63,11 +67,8 @@ class InputView extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Text(
-          'by FatalError98',
-          style: TextStyle(
-              color: Colors.grey, fontSize: screenAwareSize(13, context)),
-        ),
+        const Text('by FatalError98',
+            style: TextStyle(color: Colors.grey, fontSize: 13)),
       ],
     );
   }
