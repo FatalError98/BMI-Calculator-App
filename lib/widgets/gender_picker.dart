@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../functions/screen_size.dart';
 import '../constant/colors.dart';
 
 class GenderPick extends StatelessWidget {
@@ -19,7 +20,7 @@ class GenderPick extends StatelessWidget {
       children: [
         GestureDetector(
           child: Container(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.all(screenAwareSize(8.0, context)),
             decoration: BoxDecoration(
               color: isSelected
                   ? primaryColor.withOpacity(0.5)
@@ -37,13 +38,13 @@ class GenderPick extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          height: screenAwareSize(10.0, context),
         ),
         Text(
           title,
           style: TextStyle(
-              fontSize: 16,
+              fontSize: screenAwareSize(16.0, context),
               color: isSelected ? primaryColor : Colors.grey[800],
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal),
         )

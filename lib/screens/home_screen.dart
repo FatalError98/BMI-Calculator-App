@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../functions/screen_size.dart';
 import '../providers/bmi_provider.dart';
-import './result_screen.dart';
+
 import '../constant/colors.dart';
 import '../widgets/input_view.dart';
 
@@ -12,7 +13,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bmi = Provider.of<BmiProvider>(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: scaffoldBackgroundColor,
@@ -21,38 +21,8 @@ class HomeScreen extends StatelessWidget {
           title: const Text('BMI Calculator'),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              const InputView(),
-              const SizedBox(
-                height: 16.0,
-              ),
-              InkWell(
-                onTap: () {
-                  bmi.calculateBmiKgM();
-                  Navigator.of(context).pushNamed(ResultScreen.routeName);
-                },
-                child: Container(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Calculate',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          padding: EdgeInsets.all(screenAwareSize(8.0, context)),
+          child: const InputView(),
         ),
       ),
     );

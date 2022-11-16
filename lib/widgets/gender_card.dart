@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../functions/screen_size.dart';
 import './card_title.dart';
 import './gender_picker.dart';
 
@@ -34,11 +35,11 @@ class _GenderCardState extends State<GenderCard> {
   @override
   Widget build(BuildContext context) {
     return CardTitle(
-      height: 177.5,
-      width: 154,
+      height: screenAwareSize(155, context),
+      width: screenAwareSize(155, context),
       title: 'Gender',
       child: Container(
-        margin: const EdgeInsets.only(top: 30),
+        margin: EdgeInsets.only(top: screenAwareSize(15.0, context)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

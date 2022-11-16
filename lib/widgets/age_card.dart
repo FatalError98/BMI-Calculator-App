@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
 
+import '../functions/screen_size.dart';
 import '../constant/colors.dart';
 import '../widgets/card_title.dart';
 
@@ -19,80 +20,77 @@ class _AgeCardState extends State<AgeCard> {
   @override
   Widget build(BuildContext context) {
     return CardTitle(
-      height: 177.5,
-      width: 154,
+      height: screenAwareSize(155, context),
+      width: screenAwareSize(155, context),
       title: 'Age',
-      child: Container(
-        margin: const EdgeInsets.only(top: 20),
-        child: Column(
-          children: [
-            NumberPicker(
-              selectedTextStyle:
-                  const TextStyle(color: primaryColor, fontSize: 24.0),
-              axis: Axis.horizontal,
-              itemCount: 3,
-              itemWidth: 50,
-              minValue: 1,
-              maxValue: 130,
-              value: age,
-              onChanged: (val) => setState(() {
-                age = val;
-              }),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  width: 35,
-                  height: 35,
-                  decoration: const BoxDecoration(
-                    color: primaryColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                    splashColor: primaryColor.withOpacity(0.5),
-                    splashRadius: 20,
-                    icon: const Icon(
-                      Icons.remove,
-                      color: Colors.white,
-                      size: 16,
-                    ),
-                    onPressed: () => setState(() {
-                      if (age > 1) {
-                        age--;
-                      }
-                    }),
-                  ),
+      child: Column(
+        children: [
+          NumberPicker(
+            selectedTextStyle: TextStyle(
+                color: primaryColor, fontSize: screenAwareSize(24.0, context)),
+            axis: Axis.horizontal,
+            itemCount: 3,
+            itemWidth: screenAwareSize(40.0, context),
+            minValue: 1,
+            maxValue: 130,
+            value: age,
+            onChanged: (val) => setState(() {
+              age = val;
+            }),
+          ),
+          SizedBox(
+            height: screenAwareSize(8.0, context),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                width: screenAwareSize(35, context),
+                height: screenAwareSize(35, context),
+                decoration: const BoxDecoration(
+                  color: primaryColor,
+                  shape: BoxShape.circle,
                 ),
-                Container(
-                  width: 35,
-                  height: 35,
-                  decoration: const BoxDecoration(
-                    color: primaryColor,
-                    shape: BoxShape.circle,
+                child: IconButton(
+                  splashColor: primaryColor.withOpacity(0.5),
+                  splashRadius: 20,
+                  icon: Icon(
+                    Icons.remove,
+                    color: Colors.white,
+                    size: screenAwareSize(16.0, context),
                   ),
-                  child: IconButton(
-                    splashColor: primaryColor.withOpacity(0.5),
-                    splashRadius: 20,
-                    icon: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 16,
-                    ),
-                    onPressed: () => setState(() {
-                      if (age < 130) {
-                        age++;
-                      }
-                    }),
-                  ),
+                  onPressed: () => setState(() {
+                    if (age > 1) {
+                      age--;
+                    }
+                  }),
                 ),
-              ],
-            )
-          ],
-        ),
+              ),
+              Container(
+                width: screenAwareSize(35, context),
+                height: screenAwareSize(35, context),
+                decoration: const BoxDecoration(
+                  color: primaryColor,
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  splashColor: primaryColor.withOpacity(0.5),
+                  splashRadius: 20,
+                  icon: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    size: screenAwareSize(16.0, context),
+                  ),
+                  onPressed: () => setState(() {
+                    if (age < 130) {
+                      age++;
+                    }
+                  }),
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

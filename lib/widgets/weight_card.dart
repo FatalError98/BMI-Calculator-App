@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:provider/provider.dart';
 
+import '../functions/screen_size.dart';
 import '../providers/bmi_provider.dart';
 import './card_title.dart';
 import '../constant/colors.dart';
@@ -13,14 +14,15 @@ class WeightCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final bmi = Provider.of<BmiProvider>(context);
     return CardTitle(
-      height: 150,
-      width: double.infinity,
+      height: screenAwareSize(150, context),
+      width: screenAwareSize(314, context),
       title: 'Weight',
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            width: 150,
+            margin:
+                EdgeInsets.symmetric(vertical: screenAwareSize(10.0, context)),
+            width: screenAwareSize(150.0, context),
             decoration: BoxDecoration(
                 border: Border.all(
                   width: 1,
@@ -31,7 +33,7 @@ class WeightCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  padding: const EdgeInsets.only(right: 5),
+                  padding: EdgeInsets.only(right: screenAwareSize(5, context)),
                   decoration: BoxDecoration(
                     border: Border(
                       right: BorderSide(
@@ -41,28 +43,28 @@ class WeightCard extends StatelessWidget {
                     ),
                   ),
                   child: InkWell(
-                      child: const Icon(
+                      child: Icon(
                         Icons.remove,
-                        size: 20,
+                        size: screenAwareSize(20, context),
                       ),
                       onTap: () => bmi.decWeight()),
                 ),
                 Container(
                   color: Colors.white,
                   child: SizedBox(
-                    width: 60,
+                    width: screenAwareSize(60.0, context),
                     child: Text(
                       textAlign: TextAlign.center,
                       bmi.weight.toStringAsFixed(1),
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: primaryColor,
-                        fontSize: 20,
+                        fontSize: screenAwareSize(20.0, context),
                       ),
                     ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(left: 5),
+                  padding: EdgeInsets.only(left: screenAwareSize(5.0, context)),
                   decoration: BoxDecoration(
                     border: Border(
                       left: BorderSide(
@@ -72,9 +74,9 @@ class WeightCard extends StatelessWidget {
                     ),
                   ),
                   child: InkWell(
-                    child: const Icon(
+                    child: Icon(
                       Icons.add,
-                      size: 20,
+                      size: screenAwareSize(20, context),
                     ),
                     onTap: () => bmi.incWeight(),
                   ),

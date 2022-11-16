@@ -22,18 +22,18 @@ class CardTitle extends StatelessWidget {
       width: screenAwareSize(width, context),
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(screenAwareSize(8.0, context)),
           child: Column(
             children: [
               Text(
                 title,
-                style: const TextStyle(
-                    color: Color.fromARGB(160, 0, 0, 0),
-                    fontSize: 16,
+                style: TextStyle(
+                    color: const Color.fromARGB(160, 0, 0, 0),
+                    fontSize: screenAwareSize(16.0, context),
                     fontWeight: FontWeight.w500),
               ),
               const Divider(
-                thickness: 0.9,
+                thickness: 0.5,
               ),
               child,
             ],
