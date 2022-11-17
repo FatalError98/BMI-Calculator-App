@@ -36,8 +36,8 @@ class BmiCalculator extends StatelessWidget {
         ),
         initialRoute: HomeScreen.routeName,
         routes: {
-          HomeScreen.routeName: (context) => const HomeScreen(),
-          ResultScreen.routeName: (context) => const ResultScreen(),
+          HomeScreen.routeName: (context) => HomeScreen(),
+          ResultScreen.routeName: (context) => ResultScreen(),
         },
       ),
     );
