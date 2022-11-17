@@ -26,7 +26,7 @@ class _AgeCardState extends State<AgeCard> {
       child: Column(
         children: [
           SizedBox(
-            height: screenHeight(1.5, context),
+            height: screenWidth(1.5, context),
           ),
           NumberPicker(
             selectedTextStyle:
@@ -42,7 +42,7 @@ class _AgeCardState extends State<AgeCard> {
             }),
           ),
           SizedBox(
-            height: screenHeight(1, context),
+            height: screenWidth(1, context),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

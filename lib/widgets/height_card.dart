@@ -42,7 +42,7 @@ class HeightCard extends StatelessWidget {
             ],
           ),
           Container(
-            height: screenHeight(3.5, context),
+            height: screenWidth(6, context),
             width: screenWidth(40, context),
             decoration: BoxDecoration(
               border: Border.all(
